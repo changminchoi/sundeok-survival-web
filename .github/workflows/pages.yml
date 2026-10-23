@@ -21,9 +21,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download WebGL data
         env:
-          DATA_SHA256: 'bba05d129f805d8337eda48b46ba4a63e9aef285b534806fb5bf8c1876d70f57'
+          DATA_SHA256: '578cc439d912016cd1487c047607c2fc526fc438dce6859a5d1a97e561a79493'
         run: |
-          curl --fail --location --retry 3 --output site/Build/WebGL.data.unityweb "https://github.com/${{ github.repository }}/releases/download/web-v1.1.1/WebGL.data.unityweb"
+          curl --fail --location --retry 3 --output site/Build/WebGL.data.unityweb "https://github.com/${{ github.repository }}/releases/download/web-v1.1.2/WebGL.data.unityweb"
           printf '%s  %s\n' "$DATA_SHA256" site/Build/WebGL.data.unityweb | sha256sum --check
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
